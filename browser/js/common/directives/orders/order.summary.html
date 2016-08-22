@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <div class="order-div">
+    <h4>Order Placed on {{ orderSummary.date }}</h4>
+    <h4>Total: {{ orderSummary.priceTotal }}</h4>
+    <h5>Shipped To: {{ orderSummary.shipping.street1 }}{{ orderSummary.shipping.street2 ? ' ,' + orderSummary.shipping.street2 : '' }}, {{ orderSummary.shipping.city}}, {{ orderSummary.shipping.state }} {{ orderSummary.shipping.zip }} </h5>
+  </div>
+  <button class="btn btn-primary" ng-click="toggle(orderSummary.id)">{{ show[orderSummary.id] ? 'Show Less' : 'Show Details' }}</button>
+  <div ng-show="show[orderSummary.id]">
+    <h3>Order Details</h3>
+    <order-detail ng-repeat="detail in details[orderSummary.id]" model="detail" ></order-detail>
+  </div>
+</div>

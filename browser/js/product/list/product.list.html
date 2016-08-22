@@ -1,0 +1,23 @@
+<section>
+  <div id="filterBar" class="col-md-3">
+    <ul>
+    	<li>
+    	<h3>Price</h3>
+
+    	<p>
+    	<input ng-change="changeFilter('price', 'price[$lt]=4000', 'priceChecked')" ng-model="priceChecked" ng-init="priceChecked=false" type="checkbox"> Under $40</p>
+
+    	</li>
+    	<li>
+    	<h3>Inventory</h3>
+
+    	<p><input ng-change="changeFilter('inventory', 'inventory[$gt]=75', 'inventoryChecked')" ng-model="inventoryChecked" ng-init="inventoryChecked=false" type="checkbox"> Greater than 75</p>
+
+    	</li>
+    </ul>
+  </div>
+  <div id="allItems" class="col-md-9">
+      <product-list ng-repeat="product in products" model="product">
+      </product-list>
+  </div>
+</section>

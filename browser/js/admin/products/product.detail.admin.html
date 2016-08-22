@@ -1,0 +1,27 @@
+<section>
+
+<form id="admin-edit-form" class="admin-detail-form" novalidate name="editProductForm" ng-submit="saveChanges(product)">
+
+    <alert type="danger" ng-show="error">
+        {{ error }}
+    </alert>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input name="name" type="text" ng-model="product.name" require class="form-control">
+        <label for="price">Price</label>
+        <input name="price" type="number" ng-model="product.price" require class="form-control">
+        <label for="inventory">inventory</label>
+        <input name="inventory" type="number" ng-model="product.inventory" require class="form-control">
+        <label for="description">Description</label>
+        <textarea name="description" type="text" ng-model="product.description" require class="form-control"></textarea>
+        <label for="color">Color</label>
+        <input name="color" type="text" ng-model="product.color" require class="form-control">
+        <label for="photo-url">Photo Url</label>
+        <input name="photo-url" type="text" ng-model="product.photoUrl" require class="form-control">
+
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</section>
